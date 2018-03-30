@@ -23,7 +23,7 @@ public class Java8WatchServiceExample {
         walkAndRegisterDirectories(dir);
     }
 
-    // 경로를 WatchKey 해시맵에 저장해서 캐시 처리
+    // 경로에 watcher를 등록하고 WatchKey를 해시맵에 저장
     private void registerDirectory(Path dir) throws  IOException {
         WatchKey key = dir.register(watcher, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_DELETE, StandardWatchEventKinds.ENTRY_MODIFY);
         keys.put(key, dir);
