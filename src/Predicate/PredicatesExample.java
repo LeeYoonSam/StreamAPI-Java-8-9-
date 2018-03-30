@@ -2,7 +2,7 @@ package Predicate;
 
 import java.util.List;
 
-public class TestEmployeePredicates {
+public class PredicatesExample {
     public static void main(String[] args) {
         Employee e1 = new Employee(1,23,"M","Rick","Beethovan");
         Employee e2 = new Employee(2,13,"F","Martina","Hengis");

@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class StreamMethodReferenceTest {
+public class StreamMethodReferenceExample {
 
     /**
      * URL - https://howtodoinjava.com/java-8/lambda-method-references-example/

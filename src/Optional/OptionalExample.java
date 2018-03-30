@@ -2,7 +2,7 @@ package Optional;
 
 import java.util.Optional;
 
-public class OptionalTest {
+public class OptionalExample {
     /**
      * URL - https://howtodoinjava.com/java-8/java-8-optionals-complete-reference/
      *
