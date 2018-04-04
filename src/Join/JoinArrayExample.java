@@ -1,4 +1,4 @@
-package JoinArray;
+package Join;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 /**
  * URL - https://howtodoinjava.com/java-8/java-8-join-string-array-example/
  */
-public class JoinExample {
+public class JoinArrayExample {
     public static void main(String[] args) {
         System.out.println("[ join(CharSequence delimiter, CharSequence… elements) ]");
         joinMultipleStrings();
