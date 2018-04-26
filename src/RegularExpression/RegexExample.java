@@ -2,6 +2,7 @@ package RegularExpression;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.PriorityQueue;
 import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -22,6 +23,8 @@ public class RegexExample {
         System.out.println("[ Using Regex using Pattern.matcher() ]");
         patternMatcher();
         System.out.println("-------------------------------");
+
+        PriorityQueue<Integer> dd = new PriorityQueue<>();
     }
 
     // Pattern.compile().asPredicate()
