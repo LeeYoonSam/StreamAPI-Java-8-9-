@@ -1,8 +1,14 @@
 package DesignPattern.SingletonPattern;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class SingletonTest {
 
     public static void main(String[] args) throws InterruptedException {
+        // ExecutorService 인터페이스 구현객체 Executors 정적메서드를 통해 최대 스레드 개수가 2인 스레드 풀 생성
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+
         Singleton singleton = Singleton.getInstance();
 
         Thread thread = new Thread(new Runnable() {
@@ -32,11 +38,19 @@ public class SingletonTest {
             }
         });
 
-        Thread.sleep(1000);
-        thread.start();
-        thread2.start();
-        thread3.start();
+        // ExecutorService를 활용한 쓰레드풀
+        executorService.execute(thread3);
+        executorService.execute(thread);
+        executorService.execute(thread2);
 
+        executorService.shutdown();
+
+
+//        thread.start();
+//        thread2.start();
+//        thread3.start();
+
+        Thread.sleep(1000);
         System.out.println("Last: " + singleton.getStart());
     }
 
