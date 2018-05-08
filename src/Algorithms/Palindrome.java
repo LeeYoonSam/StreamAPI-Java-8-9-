@@ -40,6 +40,9 @@ public class Palindrome {
 
         usingArray(inputString);
         usingSubstring(inputString);
+
+
+        System.out.println(isPalindrome(Integer.parseInt(inputString)));
     }
 
     static void usingArray(String inputString) {
@@ -102,5 +105,27 @@ public class Palindrome {
             System.out.println("True");
         else
             System.out.println("False");
+    }
+
+    /*
+    풀이 답안 가져옴
+
+    시간 복잡도: O(log n) // 숫자의 길이만큼 반복
+    공간 복잡도: O(1)
+     */
+    static boolean isPalindrome(int input) {
+        if(input < 0 || (input % 10 == 0 && input != 0)) {
+            return false;
+        }
+
+        int revertedHalf = 0;
+
+        // while을 사용하여 1의 자리를 구한 후 10으로 나누어 1의자리 삭제
+        while(input > revertedHalf) {
+            revertedHalf = revertedHalf * 10 + input % 10;
+            input /= 10;
+        }
+
+        return input == revertedHalf || input == revertedHalf/10;
     }
 }
