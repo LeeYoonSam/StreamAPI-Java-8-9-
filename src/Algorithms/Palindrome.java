@@ -41,8 +41,16 @@ public class Palindrome {
         usingArray(inputString);
         usingSubstring(inputString);
 
+        if(strictPalindrome(inputString))
+            System.out.println("True");
+        else
+            System.out.println("False");
 
-        System.out.println(isPalindrome(Integer.parseInt(inputString)));
+
+        try {
+            System.out.println(isPalindrome(Integer.parseInt(inputString)));
+        } catch (Exception e){}
+
     }
 
     static void usingArray(String inputString) {
@@ -127,5 +135,48 @@ public class Palindrome {
         }
 
         return input == revertedHalf || input == revertedHalf/10;
+    }
+
+    static String reverse(final String s) {
+        final StringBuilder builder = new StringBuilder(s.length());
+        for(int i = s.length() -1; i >= 0; i--) {
+            builder.append(s.charAt(i));
+        }
+
+        return builder.toString();
+    }
+
+    static boolean isPalindrome2(final String s) {
+        final String toCheck = s.toLowerCase();
+
+        int left = 0;
+        int right = toCheck.length() - 1;
+
+        while (left <= right) {
+            while (left < toCheck.charAt(left)) {
+                left ++;
+            }
+
+            while (right > 0 && !Character.isLetter(toCheck.charAt(right))) {
+                right --;
+            }
+
+            if(left > toCheck.length() || right < 0) {
+                return false;
+            }
+
+            if(toCheck.charAt(left) != toCheck.charAt(right)) {
+                return false;
+            }
+
+            left ++;
+            right --;
+        }
+
+        return true;
+    }
+
+    static boolean strictPalindrome(final String s) {
+        return s.equals(reverse(s));
     }
 }
