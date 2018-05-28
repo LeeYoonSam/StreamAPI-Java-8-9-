@@ -25,8 +25,17 @@ public class ReversString {
     public static String convertToReverse(String[] wordAry) {
         StringBuilder strBuilder = new StringBuilder();
 
+        int lastCount = 0;
+
         for(String word : wordAry) {
-            strBuilder.append(getReverseString(word)).append(" ");
+            ++ lastCount;
+
+            strBuilder.append(getReverseString(word));
+
+            // 마지막 공백은 추가하지 않음
+            if(lastCount < wordAry.length)
+                strBuilder.append(" ");
+
         }
 
         return strBuilder.toString();
